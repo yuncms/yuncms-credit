@@ -6,13 +6,24 @@ php:
   - 7.1
   - 7.2
 
+# faster builds on new travis setup not using sudo
 sudo: false
 
+# cache vendor dirs
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
 install:
-  - composer global require "fxp/composer-asset-plugin:^1.2.0"
-  - composer global require "codeception/codeception:*"
+  - travis_retry composer self-update && composer --version
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer update
+  - travis_retry composer update --prefer-dist --no-interaction
+
+before_script:
+  - mysql -e 'create database yuncms_test;'
+  - php tests/_app/yii.php migrate --interactive=0
+  - vendor/bin/codecept build
 
 script:
-    - codecept run
+  - vendor/bin/codecept run
