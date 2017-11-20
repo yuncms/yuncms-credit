@@ -1,0 +1,51 @@
+{
+  "name": "yuncms/yuncms-credit",
+  "description": "credit",
+  "keywords": [
+    "credit"
+  ],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Xu TL",
+      "email": "xutongle@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.6",
+    "yiisoft/yii2-queue": "~2.0.0",
+    "yuncms/yuncms-user": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "yuncms\\credit\\": ""
+    }
+  },
+  "extra": {
+    "yuncms": {
+      "name": "credit",
+      "i18n": {
+        "class": "yii\\i18n\\PhpMessageSource",
+        "sourceLanguage": "en-US",
+        "basePath": "@yuncms/credit/messages"
+      },
+      "migrationNamespace": "yuncms\\credit\\migrations",
+      "backend": {
+        "class": "yuncms\\credit\\backend\\Module"
+      },
+      "frontend": {
+        "class": "yuncms\\credit\\frontend\\Module"
+      }
+    },
+    "branch-alias": {
+      "dev-master": "2.0-dev"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
