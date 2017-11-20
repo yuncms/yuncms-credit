@@ -15,7 +15,7 @@ use yuncms\user\models\UserExtra;
 /**
  * 异步更新用户经验任务类
  */
-class CreditJobs extends BaseObject implements RetryableJobInterface
+class UpdateCreditJobs extends BaseObject implements RetryableJobInterface
 {
     /**
      * @var string 操作

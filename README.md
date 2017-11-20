@@ -1,6 +1,12 @@
 # yuncms-credit
 
-积分模块
+The credit module for yuncms.
+
+[![Latest Stable Version](https://poser.pugx.org/yuncms/yuncms-credit/v/stable.png)](https://packagist.org/packages/yuncms/yuncms-credit)
+[![Total Downloads](https://poser.pugx.org/yuncms/yuncms-credit/downloads.png)](https://packagist.org/packages/yuncms/yuncms-credit)
+[![Build Status](https://img.shields.io/travis/yuncms/yuncms-credit.svg)](http://travis-ci.org/yuncms/yuncms-credit)
+[![License](https://poser.pugx.org/yuncms/yuncms-credit/license.svg)](https://packagist.org/packages/yuncms/yuncms-credit)
+
 
 ## Installation
 
