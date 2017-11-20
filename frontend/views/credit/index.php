@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-12">
                 <p class="mb-20">
                     <?= Yii::t('credit', 'Your current credits are:') ?> <strong
-                            class="text-gold"><?= Yii::$app->user->identity->extend->credits ?></strong>
+                            class="text-gold"><?= Yii::$app->user->identity->extra->credits ?></strong>
                 </p>
 
                 <?= GridView::widget([

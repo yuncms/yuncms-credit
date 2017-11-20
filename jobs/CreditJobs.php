@@ -7,16 +7,15 @@
 
 namespace yuncms\credit\jobs;
 
-use Yii;
-use yii\base\Object;
-use yii\queue\RetryableJob;
+use yii\base\BaseObject;
+use yii\queue\RetryableJobInterface;
 use yuncms\credit\models\Credit;
-use yuncms\user\models\Extend;
+use yuncms\user\models\UserExtra;
 
 /**
  * 异步更新用户经验任务类
  */
-class CreditJobs extends Object implements RetryableJob
+class CreditJobs extends BaseObject implements RetryableJobInterface
 {
     /**
      * @var string 操作
@@ -48,9 +47,9 @@ class CreditJobs extends Object implements RetryableJob
      */
     public function execute($queue)
     {
-        $extend = Extend::findOne($this->userId);
+        $extend = UserExtra::findOne($this->user_id);
         if ($extend) {
-            $transaction = Extend::getDb()->beginTransaction();
+            $transaction = UserExtra::getDb()->beginTransaction();
             try {
                 $extend->updateCounters(['credits' => $this->credits]);
                 Credit::create([
